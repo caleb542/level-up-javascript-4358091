@@ -1,2 +1,2 @@
 // Write your code here
-console.log('Hi Hello Caleb Woo hoo')
+console.log('Hi Hello, Woo Hoo')
