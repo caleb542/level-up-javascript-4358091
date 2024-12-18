@@ -5,15 +5,57 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background:teal;
+    }
+    h1 {
+      text-align: center;
+      color:green;
+      border-bottom: 1px solid green;
+      stroke-width: 1px;
+      display:inline-block;
+    }
+    main {
+      --bg:color(display-p3 0.512 0.377 0.317);
+      margin:0 auto;
+      min-height:400px;
+      width:30%;
+      height:auto;
+      background-color:var(--bg);
+    }
+    ul {
+      margin:0 auto;
+      width:50%;
+     
+      
+      & li {
+        padding:0;
+        margin:0;
+        padding:20px 0;
+        border-width:1px 0 1px 0;
+        border-color:color(display-p3 0.512 0.477 0.317);
+        border-style:solid;
+      
+      }
+      li:nth-of-type(odd) {
+        border-bottom-width: 0;
+      }
+    }
+  </style>
   <title>01_03_Vegetarian_Dinner</title>
 </head>
 
 <body>
   <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
+  <main>
+    <h1>Vegetarian Menu</h1>
+    <!-- Use this element to render your menu -->
+    <ul id="menu"></ul>
 
-  <!-- Use this element to render your menu -->
-  <ul id="menu"></ul>
-
+  </main>
+ 
   <script>
     const menu = [
       {
@@ -34,6 +76,28 @@
       }
     ]
     // Write your code here
+
+    function vegetarianOptions(menu) {
+       const menuNode = document.querySelector("#menu");
+       const vegetarianOptions = menu.filter(item => item.isVegetarian === true)
+        let vegItems = vegetarianOptions.forEach((item) => {
+        let dish = document.createElement('li');
+        dish.textContent = item.name;
+        menuNode.appendChild(dish);
+      })
+    }
+
+
+    vegetarianOptions(menu)
+
+   
+   
+
+
+    
+
+
+
 
   </script>
 </body>

@@ -31,3 +31,23 @@ class Book {
 }
 
 // Write your code here
+class TechnicalBook extends Book {
+  constructor (title, author, ISBN, numCopies, edition){
+     super(title, author, ISBN, numCopies);
+     this.edition = edition;
+  }
+
+  // get edition(){
+  //   return this.getEdition()
+  // }
+  getEdition() {
+    return `The current edition is ${this.edition}`
+  }
+}
+
+
+
+const GraysAnatomy = new TechnicalBook('Grays Anatomy','Doctor Gray','ISBN-777-777',200, 1)
+console.log(GraysAnatomy)
+console.log(GraysAnatomy.availability)
+console.log(GraysAnatomy.getEdition())
