@@ -18,6 +18,20 @@
 
   <script>
     // Write your code here
+    function makeBlodyColor(color){
+      document.body.style.backgroundColor = color;
+    }
+    document.querySelector('#blue').addEventListener('click', () => {
+      makeBlodyColor("#0f62f3")
+    })
+
+    document.getElementById('pink').addEventListener('click', () => {
+        makeBlodyColor("#ff7eb6")
+      })
+
+    document.querySelector('#green').addEventListener('click', () => {
+          makeBlodyColor("#42be65")
+        })
 
   </script>
 </body>
