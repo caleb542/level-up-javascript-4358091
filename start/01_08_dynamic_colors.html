@@ -5,6 +5,24 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    button {
+      padding:5px 10px;
+      border:2px solid #333;
+      border-radius:5px;
+      color:#fff;
+      cursor:pointer;
+      &:nth-of-type(1){
+        background:blue;
+      }
+      &:nth-of-type(2){
+        background:hotpink;
+      }
+      &:nth-of-type(3){
+        background:rgb(34, 155, 34)
+      }
+    }
+  </style>
   <title>Dynamic Colors</title>
 </head>
 
@@ -12,13 +30,18 @@
   <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
 
   <!-- Use these elements to trigger the color change -->
+   <buttons>
   <button id="blue">Blue</button>
   <button id="pink">Pink</button>
   <button id="green">Green</button>
+   </buttons>
+
 
   <script>
     // Write your code here
+    
     function makeBlodyColor(color){
+     
       document.body.style.backgroundColor = color;
     }
     document.querySelector('#blue').addEventListener('click', () => {

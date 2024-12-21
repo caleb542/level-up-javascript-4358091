@@ -9,7 +9,5 @@ function coffeeDate(){
 const initialValue = 0;
 const price = 1.25;
 
-
-
 console.log(coffeeDate(array))
 

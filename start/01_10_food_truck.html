@@ -10,12 +10,64 @@
 
 <body>
   <!-- To run this file right click the file in the navigation bar and select "Open with live server. Then open the developer tools in the browser and head to the console window."-->
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
 
+      min-height:100dvh;
+      background:linear-gradient(0deg, rgb(255, 255, 6), rgb(247, 107, 56), lightblue, red, rgb(255, 141, 141));
+    }
+    main {
+      margin:0 auto;
+      display:flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap:40px;
+      width:40%;
+      border-radius:12px;
+      padding:60px;
+      background:rgba(255,255,255,0.4);
+    }
+  </style>
   <!-- Use this element to generate your menu -->
-  <ul id="combined-menu"></ul>
-
+   <main>
+    <h1>Food Truck Festival Menu</h1>
+    <ul id="combined-menu"></ul>
+  </main>
   <script>
-    // Write your code here
+  function foodTruckFestival() {
+    // one way use an array of arrays
+    const menus = [
+      ['pizza', 'calzones', 'poutine'],
+      ['lobster', 'poutine', 'lobster poutine'],
+      ['pizza', 'donairs'],
+      ['calzones', 'pizza', 'popcicles']
+    ]
+    // other way combine seperate arrays into one using [,...] spread operator
+    const menu1 = ['pizza','calzones', 'poutine'];
+    const menu2 = ['lobster','poutine','lobster poutine'];
+    const menu3 = ['pizza','donairs' ];
+    const menu4 = ['calzones', 'pizza', 'popcicles'];
+    // combine menus into 1
+    //let totalMenu = [...menu1, ...menu2, ...menu3, ...menu4]
+    let totalMenu = menus.flat()
+    console.log(totalMenu)
+    // Set returns an array of unique values
+    return new Set(totalMenu)
+  
+  }
+
+  let combinedMenuDom = document.getElementById("combined-menu");
+  let combinedMenu = foodTruckFestival();
+  // Populate the DOM using 'for of' instead of forEach
+  for( item of combinedMenu ) {
+    let domItem = document.createElement('li');
+    domItem.innerText = item;
+    combinedMenuDom.appendChild(domItem)
+  }
 
   </script>
 </body>
